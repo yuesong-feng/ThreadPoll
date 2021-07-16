@@ -21,7 +21,7 @@ std::function<int(int, char, std::string)> func = my_function;    //func可以�
     template <typename T, typename... Args>
     void add(std::function<T(Args...)>, Args...);
 */
-poll.add(func, 1, 'a', std::string("Hello World!"));    //讲func指向的函数添加到线程池
+poll.add(func, 1, 'a', std::string("Hello World!"));    //将func指向的函数添加到线程池，函数参数按顺序传递
 
 poll.join_all();    //将线程池中所有线程join()，即等待所有线程运行结束再执行主线程下面的操作
 ```
