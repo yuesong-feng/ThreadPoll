@@ -7,7 +7,7 @@ C++线程池
 ```c++
 #include "ThreadPoll.h"
 
-ThreadPoll poll;    //创建一个线程池
+ThreadPoll poll(int size);    //创建一个线程池，传入size表示工作线程数量
 
 /*
     int myfunction(int i, char c, std::string str){
@@ -23,5 +23,4 @@ std::function<int(int, char, std::string)> func = my_function;    //func可以�
 */
 poll.add(func, 1, 'a', std::string("Hello World!"));    //将func指向的函数添加到线程池，函数参数按顺序传递
 
-poll.join_all();    //将线程池中所有线程join()，即等待所有线程运行结束再执行主线程下面的操作
 ```
