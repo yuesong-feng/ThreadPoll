@@ -12,7 +12,7 @@ void function(int i, std::string str)
 int main(int argc, char const *argv[])
 {
     std::function<void(int, std::string)> p = function;
-    ThreadPoll poll;
+    ThreadPoll poll(10);
     for (int i = 0; i < 10; ++i)
     {
         poll.add(p, 3, std::string("hello"));
