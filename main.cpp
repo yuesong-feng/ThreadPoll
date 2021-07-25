@@ -17,8 +17,5 @@ int main(int argc, char const *argv[])
     {
         poll.add(p, 3, std::string("hello"));
     }
-    std::cout << "before join_all" << std::endl;
-    poll.join_all();
-    std::cout << "after join_all" << std::endl;
     return 0;
 }
